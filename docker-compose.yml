@@ -44,43 +44,43 @@ services:
     # Where our data will be persisted
     volumes:
       - my-db:/var/lib/mysql
-#   event-reciever:
-#     image: event-reciever
-#     ports:
-#       - "8080:8080"
-#     hostname: event-receiver
-#     depends_on:
-#       - "kafka"
-#     volumes:
-#      - ./configs/event-receiver:/config
-#   data_store:
-#     image: data_store
-#     ports:
-#       - "8090:8090"
-#     hostname: event_store
-#     depends_on:
-#       - "kafka"
-#       - "db"
-#     volumes:
-#      - ./configs/data_store:/config
-#   processor:
-#     image: processor
-#     ports:
-#       - "8100:8100"
-#     hostname: processor
-#     depends_on:
-#       - "db"
-#     volumes:
-#      - ./configs/processor:/config
-#   audit_log:
-#     image: audit_log
-#     ports:
-#       - "8200:8200"
-#     hostname: audit_log
-#     depends_on:
-#       - "kafka"
-#     volumes:
-#      - ./configs/audit_log:/config
-# Names our volume
+  event-reciever:
+    image: event-reciever
+    ports:
+      - "8080:8080"
+    hostname: event-receiver
+    depends_on:
+      - "kafka"
+    volumes:
+     - ./configs/event-receiver:/config
+  data_store:
+    image: data_store
+    ports:
+      - "8090:8090"
+    hostname: event_store
+    depends_on:
+      - "kafka"
+      - "db"
+    volumes:
+     - ./configs/data_store:/config
+  processor:
+    image: processor
+    ports:
+      - "8100:8100"
+    hostname: processor
+    depends_on:
+      - "db"
+    volumes:
+     - ./configs/processor:/config
+  audit_log:
+    image: audit_log
+    ports:
+      - "8200:8200"
+    hostname: audit_log
+    depends_on:
+      - "kafka"
+    volumes:
+     - ./configs/audit_log:/config
+Names our volume
 volumes:
   my-db:
